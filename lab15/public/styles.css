@@ -1,0 +1,632 @@
+/* Стилі для загального вигляду */
+
+#buy{
+    display: none;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.header, .hero, .learn-more, .intro, .recommended-books, .feature-book, .become-author, .testimonials, .blog, .newsletter {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: #4f4f4f;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0d0d0e;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #459118;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #357e0a;
+    color: #fff;
+}
+
+.logo img {
+    width: 152px;
+    max-height: 33px;
+}
+
+.cta {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .main-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .menu-active .main-menu {
+        display: flex;
+    }
+    nav ul {
+        display: none;
+    }
+
+    .cta {
+        display: none;
+
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+/* Стилі для спливаючих вікон */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 90%; /* Максимальна висота вікна, щоб не виходило за верхню частину екрана */
+    overflow-y: auto; /* Додатковий скролінг, якщо вміст вікна перевищує максимальну висоту */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: auto;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #459118;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #008000;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    height: 468px;
+    background: url("./image/hero.jpg") center/cover;
+    position: relative;
+}
+
+.hero img {
+    height: 100%;
+    width: auto;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+
+    left: 20px;
+    top: 20px;
+    width: 600px;
+    padding: 20px;
+    color: #000;
+    z-index: 2
+}
+
+.hero a {
+    margin-top: 50px;
+}
+
+#books, #read {
+    text-align: center;
+    padding: 20px;
+}
+
+.recommended-books h2, .feature-book h2 {
+    font-size: 24px;
+}
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .books-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        text-align: center;
+        width: auto;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 991px) {
+    .books-container {
+        justify-content: space-between;
+    }
+
+    .book {
+        width: calc(50% - 20px);
+    }
+}
+
+.book img {
+    max-width: 100%;
+    height: 256px;
+}
+
+.book h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.book p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #459118;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #008000;
+}
+
+.feature-book .book {
+    text-align: center;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-book .book img {
+    max-width: 100%;
+    height: auto;
+}
+
+.become-author {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.become-author h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.become-author p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.become-author .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #459118;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.become-author .button:hover {
+    background-color: #008000;
+}
+
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.testimonial img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.testimonial p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.testimonial .author {
+    font-weight: bold;
+}
+
+.testimonial .author::before {
+    content: "-";
+}
+
+.blog {
+    background-color: #f7f7f7;
+    padding: 40px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.blog-post {
+    display: inline-block;
+    max-width: 300px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.blog-post img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-post h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.blog-post p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.blog-post a {
+    text-decoration: none;
+    color: #0078d4;
+    transition: color 0.3s;
+}
+
+.blog-post a:hover {
+    color: #0056b3;
+}
+
+
+.newsletter {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newsletter h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.newsletter p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.newsletter form {
+    margin-top: 10px;
+}
+
+.newsletter label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.newsletter input[type="email"] {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.newsletter input[type="email"]:focus {
+    border-color: #66cc33;
+}
+
+.newsletter button {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 30%;
+    background-color: #459118;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #008000;
+}
+
+#footer {
+    background-color: #222;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #66cc33;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social li {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.footer-social li:hover {
+    transform: scale(1.2);
+}
+
+.footer-social img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-bottom {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

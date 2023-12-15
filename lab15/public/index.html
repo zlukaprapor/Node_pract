@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <title>BOOKS</title>
+</head>
+<body>
+<header>
+    <!-- Навігаційний бар -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">
+                <img src="./image/books-unlimited-low-resolution-logo-color-on-transparent-background.png" alt="BOOKS">
+            </a>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="main-menu">
+                <li><a href="#hero">Головна</a></li>
+                <li><a href="#books">Книги</a></li>
+                <li><a href="./validator/val.html">Валідація</a></li>
+                <li><a href="./calculator/calc.html">Калькулятор</a></li>
+                <li><a href="./post/post.html">Пости</a></li>
+            </ul>
+
+        </nav>
+        <div class="cta">
+            <a id="loginOpenModal" class="button">Увійти</a>
+            <a id="registrationOpenModal" class="button">Зареєструватись</a>
+        </div>
+    </div>
+
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span id="loginCloseModal" class="close">&#10006;</span> <!-- Кнопка "х" для закриття -->
+            <h2>Увійти</h2>
+            <form action="/submit" method="post">
+                <label for="usernameLog">Ім'я користувача:</label>
+                <input type="text" id="usernameLog" name="username" required>
+                <label for="passwordLog">Пароль:</label>
+                <input type="password" id="passwordLog" name="password" required>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="regModal" class="modal">
+        <div class="modal-content">
+            <span id="registrationCloseModal" class="close">&#10006;</span> <!-- Кнопка "х" для закриття -->
+            <h2>Реєстрація</h2>
+            <form id="registrationForm" action="/submit" method="post">
+                <label for="usernameReg">Ім'я користувача:</label>
+                <input type="text" id="usernameReg" name="username" required>
+                <label for="emailReg">Електронна пошта:</label>
+                <input type="email" id="emailReg" name="email" required>
+                <label for="phoneReg">Номер телефону:</label>
+                <input type="text" id="phoneReg" name="phone">
+                <label for="passwordReg">Пароль:</label>
+                <input type="password" id="passwordReg" name="password" required>
+                <label for="confirmPasswordReg">Підтвердження пароля:</label>
+                <input type="password" id="confirmPasswordReg" name="confirmPassword" required>
+                <button type="submit">Зареєструватися</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="buy" class="buy">
+        <h2>Купити книгу</h2>
+        <p>
+            Ви готові придбати цю захоплюючу книгу? Заповніть форму нижче, і ми надішлемо вам подробиці про оплату та
+            доставку.
+        </p>
+        <form action="/submit" method="post">
+            <label for="name">Ваше Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email_buy">Ваша Електронна Пошта:</label>
+            <input type="email" id="email_buy" name="email" required>
+            <label for="address">Адреса Доставки:</label>
+            <input type="text" id="address" name="address" required>
+            <button type="submit">Придбати</button>
+        </form>
+    </section>
+</header>
+<main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Вітаємо в світі програмування</h1>
+            <p>Ласкаво просимо у захоплюючий світ програмування та інформаційних технологій. Відкрийте для себе
+                розмаїття книг, що допоможуть вам розвивати ваші навички у світі кодування. Не важливо, чи ви новачок чи
+                вже досвідчений розробник, у нас є ідеальні ресурси для кожного. Запрошуємо вас відкрити двері нашої
+                бібліотеки та розпочати захопливий шлях до успіху у сфері інформаційних технологій.</p>
+            <a id="learnMoreOpenModal" class="button">Дізнатися більше</a>
+        </div>
+        <div id="moreModal" class="modal">
+            <div class="modal-content">
+                <span id="learnMoreCloseModal" class="close">&#10006;</span> <!-- Кнопка "х" для закриття -->
+                <h2>Дізнатися більше</h2>
+                <p>
+                    Ласкаво просимо до BOOKS - вашого найкращого джерела для книг з програмування та інформаційних
+                    технологій. Ми пишаємося нашою великою колекцією книг, які охоплюють широкий спектр тем, від
+                    веб-розробки до
+                    штучного інтелекту.
+                </p>
+                <p>
+                    Наша місія - зробити знання доступним для всіх. Тому ми пропонуємо безкоштовний доступ до багатьох книг,
+                    щоб
+                    надихнути та розвивати наших читачів. Ми віримо, що навчання та саморозвиток - ключ до успіху в
+                    сучасному
+                    світі.
+                </p>
+                <p>
+                    У нас ви знайдете як популярні книги відомих авторів, так і нові та незалежні видання. Ми завжди
+                    оновлюємо
+                    нашу колекцію, щоб ви могли залишатися в тренді з останніми розробками в галузі програмування та
+                    інформаційних технологій.
+                </p>
+                <p>
+                    Щоб розпочати свій шлях до знань, просто перейдіть до нашої бібліотеки та виберіть книгу, яка цікавить
+                    вас
+                    найбільше. І не забудьте підписатися на нашу розсилку, щоб отримувати оновлення про нові видання та
+                    акції.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Список книг (Book Listing) -->
+    <section id="books" class="recommended-books">
+
+        <h2>Рекомендовані книги</h2>
+        <div class="books-container">
+            <div class="book">
+                <img src="./image/1.jpg" alt="Назва Книги 1">
+                <h3>Назва Книги 1</h3>
+                <p>Автор: Ім'я Автора</p>
+                <p>Рейтинг: 4.2 / 5</p>
+                <a href="#buy" class="button">Читати</a>
+            </div>
+
+
+            <div class="book">
+                <img src="./image/3.jpg" alt="Назва Книги 3">
+                <h3>Назва Книги 3</h3>
+                <p>Автор: Ім'я Автора</p>
+                <p>Рейтинг: 4.2 / 5</p>
+                <a href="#buy" class="button">Читати</a>
+            </div>
+
+            <div class="book">
+                <img src="./image/4.jpg" alt="Назва Книги 4">
+                <h3>Назва Книги 4</h3>
+                <p>Автор: Ім'я Автора</p>
+                <p>Рейтинг: 4.2 / 5</p>
+                <a href="#buy" class="button">Читати</a>
+            </div>
+
+            <div class="book">
+                <img src="./image/5.jpg" alt="Назва Книги 5">
+                <h3>Назва Книги 5</h3>
+                <p>Автор: Ім'я Автора</p>
+                <p>Рейтинг: 4.2 / 5</p>
+                <a href="#buy" class="button">Читати</a>
+            </div>
+        </div>
+    </section>
+    <!-- Рекомендована книга (Feature Book) -->
+    <section id="read" class="feature-book">
+        <h2>Топ книга</h2>
+
+        <img src="./image/6.jpg" alt="Обкладинка Рекомендованої Книги">
+        <h3>Назва Рекомендованої Книги</h3>
+        <p>Автор: Ім'я Автора</p>
+        <p>Рейтинг: 4.8 / 5</p>
+        <a href="#buy" class="button">Читати</a>
+
+    </section>
+    <!-- Розділ "Become an Author" -->
+    <section class="become-author">
+        <h2>Станьте Автором</h2>
+        <p>Маєте власну книгу, яку ви бажаєте опублікувати? Приєднуйтесь до нашої команди авторів та поділіться
+            своїми ідеями зі світом. Ми готові підтримати вас на кожному етапі видавництва.</p>
+        <a href="" class="button">Приєднатися</a>
+    </section>
+    <!-- Відгуки (Testimonials) -->
+    <section class="testimonials">
+        <h2>Відгуки наших клієнтів</h2>
+        <div class="testimonial">
+            <img src="./image/1client.jpg" alt="Фото Клієнта 1">
+            <p>"Чудовий вибір книг та високоякісний сервіс. Завдяки BOOKS я знайшов багато корисних матеріалів
+                для навчання."</p>
+            <p class="author">- Ольга Коваленко</p>
+        </div>
+        <div class="testimonial">
+            <img src="./image/2client.jpg" alt="Фото Клієнта 2">
+            <p>"Цей сайт став для мене основним джерелом книг. Я завжди знаходжу тут щось цікаве та корисне."</p>
+            <p class="author">- Іван Петренко</p>
+        </div>
+    </section>
+    <!-- Розділ "Blog" -->
+    <section id="blog" class="blog">
+        <h2>Наш блог</h2>
+        <div class="blog-post">
+            <img src="./image/blog.jpg" alt="Зображення Статті 1">
+            <h3>Заголовок Статті 1</h3>
+            <p>Короткий опис або перший абзац статті. Перейти до <a href="index.html">читати більше</a></p>
+        </div>
+
+        <div class="blog-post">
+            <img src="./image/blog2.jpg" alt="Зображення Статті 2">
+            <h3>Заголовок Статті 2</h3>
+            <p>Короткий опис або перший абзац статті. Перейти до <a href="index.html">читати більше</a></p>
+        </div>
+    </section>
+    <section class="newsletter">
+
+        <h2>Підпишіться на нашу розсилку</h2>
+        <p>Будьте в курсі нових книг, акцій та новин нашого сайту. Підпишіться на нашу розсилку, щоб отримувати
+            оновлення на вашу електронну пошту.</p>
+        <form action="/submit" method="post">
+            <label for="email_spam">Ваша електронна пошта:</label>
+            <input type="email" id="email_spam" name="email" placeholder="Ваша електронна пошта" required>
+            <button type="submit">Підписатися</button>
+        </form>
+
+    </section>
+
+
+</main>
+<footer>
+
+    <div id="footer" class="footer-content">
+        <div class="logo">
+            <a href="#"><img src="./image/books-unlimited-low-resolution-logo-color-on-transparent-background.png"
+                             alt="BOOKS Logo"></a>
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#hero">Головна</a></li>
+                <li><a href="#books">Книги</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#footer">Контакти</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <ul>
+                <li><a href="#"><img src="./image/free-icon-facebook-2504903.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="./image/free-icon-twitter-4494477.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="./image/free-icon-instagram-1384063.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="./image/free-icon-telegram-2504941.png" alt="Telegram"></a></li>
+            </ul>
+        </div>
+        <a id="openFeedbackModal" class="button">Зворотний зв'язок</a>
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span id="feedbackCloseModal" class="close">&#10006;</span>
+                <section class="feedback-form">
+                    <h2>Зворотній зв'язок</h2>
+                    <form id="feedbackForm" action="/submit-feedback" method="post">
+                        <label for="nameFeedback">Ім'я:</label>
+                        <input type="text" id="nameFeedback" name="name" required>
+                        <label for="emailFeedback">Електронна пошта:</label>
+                        <input type="email" id="emailFeedback" name="email" required>
+                        <label for="subjectFeedback">Тема:</label>
+                        <input type="text" id="subjectFeedback" name="subject" required>
+                        <label for="messageFeedback">Повідомлення:</label>
+                        <textarea id="messageFeedback" name="message" required></textarea>
+                        <button type="submit">Відправити</button>
+                    </form>
+                    <div id="successMessage" style="display:none;">
+                        <p>Дякуємо за ваше повідомлення! Ми відповімо якнайшвидше.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 BOOKS. Усі права захищено.</p>
+    </div>
+</footer>
+<script src="index.js"></script>
+<script src="reg_valid.js"></script>
+<script src="fit-bac_valid.js"></script>
+
+</body>
+</html>

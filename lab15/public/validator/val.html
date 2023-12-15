@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesVal.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+              rel="stylesheet">
+
+        <title>Регулярки та валідація</title>
+    </head>
+
+
+
+<body>
+<div class="taskOne">
+    <h2>Завдання 1</h2>
+    <p>Знайти всі цифри в словах</p>
+    <p>example Це речення має 3 слів і 12 цифр. А сьгодні 2023 рік.</p>
+    <input type="text" id="inputText" placeholder="Введіть текст з цифрами в словах">
+    <button onclick="findDigitsInWords()">Знайти цифри в словах</button>
+    <p id="output"></p>
+
+</div>
+
+<div class="taskTwo">
+    <h2>Завдання 2</h2>
+    <p>Показати всі IP-адреси, які відповідають формату x.0.x.x, де x - кількість символів від 1 до 3. </p>
+    <p>example IP-адреси можуть бути 1.0.2.3 або 192.168.0.1. Моя ip 3.0.3.3</p>
+    <input type="text" id="inputTextTaskTwo" placeholder="Введіть текст з IP-адресами">
+    <button onclick="findValidIPs()">Знайти IP-адреси</button>
+    <p id="outputTaskTwo"></p>
+
+</div>
+
+<div class="taskThree">
+    <h2>Завдання 3</h2>
+    <p>Введіть номер телефона в форматі +xx-xxx-xxx-xx-xx</p>
+    <p>true +11-222-333-44-55 </p>
+    <p>false +111-22-333-44-55  </p>
+    <input type="text" id="phoneNumber" placeholder="+xx-xxx-xxx-xx-xx" oninput="checkPhoneNumberValidity(this)">
+</div>
+
+<div class="taskFour">
+    <h2>Завдання 4</h2>
+    <p>Введіть адреси сторінок Facebook наприклад</p>
+    <p>true https://www.facebook.com/user123</p>
+    <p>false https://facebuk.com/anotheruser</p>
+    <input type="text" id="facebookLink" placeholder="facebook.com" oninput="checkFacebookLinkValidity(this)">
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

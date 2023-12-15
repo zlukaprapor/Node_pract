@@ -1,0 +1,19 @@
+#postsContainer {
+    margin-top: 20px;
+}
+
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.likeButton.liked {
+    background-color: #ff0000; /* Змініть на свій колір */
+    color: #fff;
+}
+
+.likeCount {
+    margin-left: 10px;
+    font-weight: bold;
+}
